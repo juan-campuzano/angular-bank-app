@@ -20,5 +20,16 @@
       "8337 33 566 44"
     ],
     "role": "User"
+  },
+  {
+    "id": "385858fc-01b1-4d6b-a5c4-15fb25a6bc9f",
+    "firstName": "Juan",
+    "lastName": "Campuzano",
+    "email": "juan@gmail.com",
+    "password": "12345678",
+    "accounts": [
+      "8337 33 566 22"
+    ],
+    "role": "User"
   }
 ]
