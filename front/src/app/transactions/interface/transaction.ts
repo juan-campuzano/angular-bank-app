@@ -8,5 +8,5 @@ export interface Transaction {
     description: String;
     status: String;
     balance: String;
-    date: String;
+    date: string;
 }

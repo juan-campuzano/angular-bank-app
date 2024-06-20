@@ -1,19 +1,40 @@
 <div class="page-container">
 
-    <h3>Your lastest transactions</h3>
+    <h3 style="font-family: 'monserrat';">Transactions</h3>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-section">
+          <label for="inputFilter"  class="form-label">Filter by description</label>
+          <input [(ngModel)] = "inputFilter" (ngModelChange)="filterByDescription()" class="form-control" id="inputFilter" type="text">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="btn-section">
+          <p>Filter by:</p>
+          <button (click)="filterAll()" class="btn btn-secondary">All</button>
+          <button (click)="filterByWithdrawals()" class="btn btn-secondary">Withdrawals</button>
+          <button (click)="filterByDeposits()" class="btn btn-secondary">Deposits</button>
+        </div>
+      </div>
+    </div>
+
+    <br>
 
     <table >
         <tr>
           <th>Type</th>
           <th>Source</th>
-          <th>Destination</th>
+          <th>Amount</th>
           <th>Description</th>
+          <th>Date</th>
         </tr>
-        <tr *ngFor="let transaction of transactions">
+        <tr *ngFor="let transaction of filteredTransactions">
           <td>{{transaction.type}}</td>
           <td>{{transaction.source}}</td>
-          <td>{{transaction.destination}}</td>
+          <td>{{transaction.amount}}</td>
           <td>{{transaction.description}}</td>
+          <td>{{transaction.date}}</td>
         </tr>
     </table>    
 </div>

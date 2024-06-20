@@ -14,3 +14,23 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+.btn-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+.btn-section button{
+    margin: 10px;
+  }
+
+.btn-section p{
+    margin: 10px;
+  }
+.input-section input{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+

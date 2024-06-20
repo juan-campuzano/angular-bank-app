@@ -6,3 +6,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .page-container{
     padding: 24px;
   }
+
+  @font-face {
+    font-family: 'monserrat';
+    src: url('../public/assets/Montserrat-VariableFont_wght.ttf');
+  }
+
+  @font-face {
+    font-family: 'archivo';
+    src: url('../public/assets/ArchivoBlack-Regular.ttf');
+  }
+
+ 
