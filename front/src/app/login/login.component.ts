@@ -6,6 +6,7 @@ import { AuthenticationService } from '../auth/service/authentication.service';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCard,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -42,7 +44,7 @@ export class LoginComponent {
         .subscribe((accessToken: AccessToken) => {
           localStorage.setItem('accessToken', accessToken.accessToken);
 
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         })
     } else {
       console.log('Form is invalid!');

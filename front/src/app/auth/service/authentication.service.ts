@@ -37,10 +37,9 @@ export class AuthenticationService {
   }
 
   async isLoggedIn(): Promise<boolean> {
-    // return lastValueFrom(this.http.get<IsLoggedIn>(`${this.endpoint}/is-logged-in`));
 
     try {
-      const response = await lastValueFrom(this.http.get<IsLoggedIn>(`${this.endpoint}/is-logged-in`));
+      const response = await lastValueFrom(this.http.get<IsLoggedIn>(`${this.endpoint}/check-signin`));
 
       return response.isValid;
     } catch (error) {

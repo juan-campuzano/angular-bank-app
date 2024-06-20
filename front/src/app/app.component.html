@@ -1,2 +1,9 @@
-<br>
+<div *ngIf="isLoggedIn()" class="topnav">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/transactions">Transactions</a>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/user-profile">Profile</a>
+</div>
+
+
 <router-outlet></router-outlet>

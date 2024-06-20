@@ -6,11 +6,13 @@
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3em;
+    min-height: 200px;
   }
   
   .form-group {
@@ -40,10 +42,12 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 3em;
+    margin: 5px;
   }
   
   .btn-primary {
-    background-color: #007bff;
+    background-color: #3E517A;
   }
   
   .btn-secondary {
@@ -51,7 +55,7 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #3E517A;
   }
   
   .error-message {
