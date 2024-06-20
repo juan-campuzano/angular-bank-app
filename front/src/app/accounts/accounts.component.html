@@ -1,0 +1,30 @@
+<div class="page-container">
+    <h2 class="text-secondary" style="font-family: 'monserrat';">Your accounts:</h2>
+
+    <div class="card card-account">
+        <div class="card-body">
+            <p style="font-weight: bold; font-size: 24px;">Savings account</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Savings <br>
+                        {{userProfile?.accounts}}
+                    </p>
+                </div>
+                <div class="col-md-6 available-balance">
+                    <p>
+                        Saldo disponible: <br>
+                        999.999.999
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button routerLink="/accounts/transactions" class="btn btn-secondary">See your movements</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

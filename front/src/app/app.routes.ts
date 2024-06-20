@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { authGuard } from './auth/guard/auth.guard';
 
 export const routes: Routes = [
@@ -9,18 +9,9 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'signup',
-        component: LoginComponent
-    }, 
-    {
         path: 'home',
         canActivate: [authGuard],
         loadComponent: () => import('./home/home.component').then(module => module.HomeComponent),
-    },
-    {
-        path: 'transactions',
-        canActivate: [authGuard],
-        loadComponent: () => import('./transactions/transactions.component').then(module => module.TransactionsComponent),
     },
     {
         path: 'user-profile',
@@ -28,12 +19,30 @@ export const routes: Routes = [
         loadComponent: () => import('./user-profile/user-profile.component').then(module => module.UserProfileComponent),
     },
     {
+        path: 'accounts',
+        canActivate: [authGuard],
+        children: [
+            {
+                path: '',
+                loadComponent: () => import('./accounts/accounts.component').then(module => module.AccountsComponent),
+            },
+            {
+                path: 'transactions',
+                loadComponent: () => import('./transactions/transactions.component').then(module => module.TransactionsComponent),
+            }
+        ]
+    },
+    {
         path: 'dashboard',
         canActivate: [authGuard],
         loadComponent: () => import('./dashboard/dashboard.component').then(module => module.DashboardComponent),
     },
-    // {
-    //     path: '**',
-    //     redirectTo: 'login'
-    // }
+    {
+        path: 'not-found',
+        component: NotFoundComponent,
+    },
+    {
+        path: '**',
+        redirectTo: 'not-found'
+    }
 ];

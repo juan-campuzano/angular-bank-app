@@ -1,0 +1,12 @@
+.card-account{
+    width: 40%;
+}
+
+.available-balance{
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-6 p {
+    font-size: 14px;
+}
