@@ -4,12 +4,12 @@ import { User } from '../user';
 import { Observable, catchError, lastValueFrom, of, tap } from 'rxjs';
 import { AccessToken } from '../../core/access-token';
 import { IsLoggedIn } from '../is-logged-in';
+import { ENDPOINT } from '../../core/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private endpoint = 'http://localhost:3000';
 
   constructor(
     private http: HttpClient,
@@ -39,16 +39,16 @@ export class AuthenticationService {
   async isLoggedIn(): Promise<boolean> {
 
     try {
-      const response = await lastValueFrom(this.http.get<IsLoggedIn>(`${this.endpoint}/check-signin`));
+      const response = await lastValueFrom(this.http.get<IsLoggedIn>(`${ENDPOINT}/check-signin`));
 
-      return response.isValid;
+      return response.loggedIn;
     } catch (error) {
       return false
     }
   }
 
   login(payload: User): Observable<AccessToken> {
-    return this.http.post<AccessToken>(`${this.endpoint}/signin`, payload)
+    return this.http.post<AccessToken>(`${ENDPOINT}/signin`, payload)
       .pipe(
         catchError(this.handleError<AccessToken>('login'))
       );

@@ -14,13 +14,23 @@ export const routes: Routes = [
     }, 
     {
         path: 'home',
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
         loadComponent: () => import('./home/home.component').then(module => module.HomeComponent),
     },
     {
         path: 'transactions',
-        // canActivate: [authGuard],
+        canActivate: [authGuard],
         loadComponent: () => import('./transactions/transactions.component').then(module => module.TransactionsComponent),
+    },
+    {
+        path: 'user-profile',
+        canActivate: [authGuard],
+        loadComponent: () => import('./user-profile/user-profile.component').then(module => module.UserProfileComponent),
+    },
+    {
+        path: 'dashboard',
+        canActivate: [authGuard],
+        loadComponent: () => import('./dashboard/dashboard.component').then(module => module.DashboardComponent),
     },
     // {
     //     path: '**',

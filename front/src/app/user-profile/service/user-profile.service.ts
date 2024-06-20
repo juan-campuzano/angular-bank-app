@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
-import { Transaction } from '../interface/transaction';
+import { UserProfile } from '../interface/user-profile';
 import { ENDPOINT } from '../../core/constants';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TransactionsService {
+export class UserProfileService {
 
   constructor(
     private http: HttpClient,
@@ -26,11 +26,8 @@ export class TransactionsService {
     };
   }
 
-  getTransactions(): Observable<Transaction[]> {
-
-    return this.http.get<Transaction[]>(`${ENDPOINT}/transactions`)
-      .pipe(
-        catchError(this.handleError<Transaction[]>('getTransactions', []))
-      );
+  getUserProfile(): Observable<UserProfile> {
+    return this.http.get<UserProfile>(`${ENDPOINT}/users/profile`).pipe(
+      catchError(this.handleError<UserProfile>('getTransactions', )))
   }
 }

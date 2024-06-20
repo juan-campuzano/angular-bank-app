@@ -1,3 +1,3 @@
 export interface IsLoggedIn {
-    isValid: boolean;
+    loggedIn: boolean;
 }

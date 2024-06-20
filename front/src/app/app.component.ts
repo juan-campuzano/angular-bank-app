@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthenticationService } from './auth/service/authentication.service';
 
 
@@ -18,6 +18,10 @@ import { AuthenticationService } from './auth/service/authentication.service';
 export class AppComponent {
   title = 'Bank app';
 
+  constructor(
+    private router: Router
+  ){}
+
 
 
   isLoggedIn() : boolean {
@@ -28,5 +32,11 @@ export class AppComponent {
     else {
       return true;
     }
+  }
+
+  logOut() : void {
+    localStorage.removeItem('accessToken');
+
+    this.router.navigate(['/login']);
   }
 }

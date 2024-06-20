@@ -1,8 +1,13 @@
-<div *ngIf="isLoggedIn()" class="topnav">
-    <a routerLink="/home">Home</a>
-    <a routerLink="/transactions">Transactions</a>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/user-profile">Profile</a>
+<div *ngIf="isLoggedIn()" class="topnav navigation">
+    <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/transactions">Transactions</a></li>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/user-profile">Profile</a></li>
+    </ul>
+    <ul>
+        <li><a (click)="logOut()">Logout</a></li>
+    </ul>
 </div>
 
 

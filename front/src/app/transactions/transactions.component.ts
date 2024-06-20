@@ -19,7 +19,7 @@ export class TransactionsComponent {
     private transactionService : TransactionsService
   ){}
 
-  ngOnInit() :void {
+  ngOnInit() : void {
     this.getTransactions();
   }
 
